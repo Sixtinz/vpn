@@ -750,10 +750,10 @@ infovps() {
     info+="<b>SISTEMA OPERACIONAL</b>\n"
     info+="$system\n\n"
     info+="<b>PROCESSADOR</b>\n"
-    info+="<b>Nucleos:</b> $cpucores\n"
+    info+="<b>นิวเคลียส:</b> $cpucores\n"
     info+="<b>Ultilizacao:</b> $uso\n\n"
     info+="<b>MEMORIA RAM</b>\n"
-    info+="<b>Total:</b> $ram1\n"
+    info+="<b>ทั้งหมด:</b> $ram1\n"
     info+="<b>Ultilizacao:</b> $usoram\n\n"
     while read linha; do
         info+="<b>$(echo -e "$linha")</b>\n"
@@ -1065,7 +1065,7 @@ relatorio_rev() {
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
         msg+="<b>📊 RELATORIO | INFORMACOES</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>Usuarios total:</b> $_tuser\n"
+        msg+="<b>Usuarios ทั้งหมด:</b> $_tuser\n"
         msg+="<b>Usuarios online:</b> $_onli\n"
         msg+="<b>Revendas Ativas:</b> $_cont_rev\n"
         msg+="<b>Revendas Suspensas:</b> $_cont_sus\n"
@@ -1080,7 +1080,7 @@ relatorio_rev() {
                 --text "⚠️ NENHUM REVENDEDOR ENCONTRADO !"
             return 0
         }
-        echo -e "RELATORIO DOS REVENDEDORES\n\nTotal: $_cont_revt  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >/tmp/Relatorio.txt
+        echo -e "RELATORIO DOS REVENDEDORES\n\nทั้งหมด: $_cont_revt  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >/tmp/Relatorio.txt
         while read _revlist; do
             _nome_rev="$(echo $_revlist | awk '{print $2}')"
             _limite_rev="$(echo $_revlist | awk '{print $4}')"
@@ -1156,11 +1156,11 @@ relatorio_rev() {
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
         msg+="<b>Limite de Logins:</b> $_cont_limite\n"
         msg+="<b>Limite Disponivel:</b> $_cont_disp\n"
-        msg+="<b>Sub-Revendas Total:</b> $_cont_atv\n"
+        msg+="<b>Sub-Revendas ทั้งหมด:</b> $_cont_atv\n"
         msg+="<b>Sub-Revendas Suspensas:</b> $_cont_sup\n"
         msg+="<b>User:</b> @${callback_query_from_username}\n"
         msg+="<b>ID:</b> <code>${callback_query_from_id}</code>\n"
-        echo -e "RELATORIO DOS SUB REVENDEDORES\n\nTotal: $_cont_atv  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >/tmp/Relatorio-${callback_query_from_username}.txt
+        echo -e "RELATORIO DOS SUB REVENDEDORES\n\nทั้งหมด: $_cont_atv  -  $(printf 'Data: %(%d/%m/%Y)T\n')\n=×=×=×=×=×=×=×=×=×=×=×=×=×=×=×=" >/tmp/Relatorio-${callback_query_from_username}.txt
         while read _sublist; do
             _usub="$(echo $_sublist | awk '{print $2}')"
             _limit_sub=$(echo $_sublist | awk '{print $4}')
@@ -1716,7 +1716,7 @@ infouserbot() {
         fun_verif_limite_rev ${message_from_username}
         _cont_disp=$(echo $_cont_limite - $_result | bc)
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-            --text "$(echo -e "<b>NOME: </> ${message_from_first_name[$(ShellBot.ListUpdates)]}\n<b>USER:</>" "@${message_from_username[$(ShellBot.ListUpdates)]:-null}")\n<b>ID:</> ${message_from_id[$(ShellBot.ListUpdates)]}\nACESSO: REVENDA\n<b>LIMITE TOTAL:</b> $_cont_limite\n<b>LIMITE RESTANTE:</b> $_cont_disp" \
+            --text "$(echo -e "<b>NOME: </> ${message_from_first_name[$(ShellBot.ListUpdates)]}\n<b>USER:</>" "@${message_from_username[$(ShellBot.ListUpdates)]:-null}")\n<b>ID:</> ${message_from_id[$(ShellBot.ListUpdates)]}\nACESSO: REVENDA\n<b>LIMITE ทั้งหมด:</b> $_cont_limite\n<b>LIMITE RESTANTE:</b> $_cont_disp" \
             --parse_mode html
         return 0
     } || {

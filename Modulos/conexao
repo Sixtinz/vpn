@@ -200,7 +200,7 @@
 
 	addpt_sqd() {
 		echo -e "\E[44;1;37m         ADICIONAR PORTA AO SQUID         \E[0m"
-		echo -e "\n\033[1;33mPORTAS EM USO: \033[1;32m$sqdp\n"
+		echo -e "\n\033[1;33mPORTAS ใช้งานอยู่: \033[1;32m$sqdp\n"
 		if [[ -f "/etc/squid/squid.conf" ]]; then
 			var_sqd="/etc/squid/squid.conf"
 		elif [[ -f "/etc/squid3/squid.conf" ]]; then
@@ -236,7 +236,7 @@
 
 	rempt_sqd() {
 		echo -e "\E[41;1;37m        REMOVER PORTA DO SQUID        \E[0m"
-		echo -e "\n\033[1;33mPORTAS EM USO: \033[1;32m$sqdp\n"
+		echo -e "\n\033[1;33mPORTAS ใช้งานอยู่: \033[1;32m$sqdp\n"
 		if [[ -f "/etc/squid/squid.conf" ]]; then
 			var_sqd="/etc/squid/squid.conf"
 		elif [[ -f "/etc/squid3/squid.conf" ]]; then
@@ -682,7 +682,7 @@
 					clear
 					echo -e "\E[44;1;37m         ALTERAR PORTA OPENVPN         \E[0m"
 					echo ""
-					echo -e "\033[1;33mPORTA EM USO: \033[1;32m$opnp"
+					echo -e "\033[1;33mPORTA ใช้งานอยู่: \033[1;32m$opnp"
 					echo ""
 					echo -ne "\033[1;32mQUAL PORTA DESEJA UTILIZAR \033[1;33m?\033[1;37m "
 					read porta
@@ -1462,7 +1462,7 @@ exit 0' >$RCLOCAL
 				clear
 				echo -e "\E[44;1;37m            PROXY SOCKS             \E[0m"
 				echo ""
-				echo -e "\033[1;33mPORTAS EM USO: \033[1;32m$sockspt"
+				echo -e "\033[1;33mPORTAS ใช้งานอยู่: \033[1;32m$sockspt"
 				echo ""
 				echo -ne "\033[1;32mQUAL PORTA DESEJA ULTILIZAR \033[1;33m?\033[1;37m: "
 				read porta
@@ -1731,7 +1731,7 @@ exit 0' >$RCLOCAL
 			clear
 			echo -e "\E[41;1;37m         REMOVER PORTA DO SSH         \E[0m"
 			echo -e "\n\033[1;33m[\033[1;31m!\033[1;33m] \033[1;32mPORTA PADRAO \033[1;37m22 \033[1;33mCUIDADO !\033[0m"
-			echo -e "\n\033[1;33mPORTAS EM USO: \033[1;37m$(grep 'Port' /etc/ssh/sshd_config | cut -d' ' -f2 | grep -v 'no' | xargs)\n"
+			echo -e "\n\033[1;33mPORTAS ใช้งานอยู่: \033[1;37m$(grep 'Port' /etc/ssh/sshd_config | cut -d' ' -f2 | grep -v 'no' | xargs)\n"
 			echo -ne "\033[1;32mQUAL PORTA DESEJA REMOVER \033[1;33m?\033[1;37m "
 			read pt
 			[[ -z "$pt" ]] && {

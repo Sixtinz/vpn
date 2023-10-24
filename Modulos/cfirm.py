@@ -40,7 +40,7 @@ _TEXTO_ = """\
 <br><b><font color="blue">Ano: </b></font> <i><b><font color="red">"""+_ANO_+"""</font></b></i>
 <b><p>══════════════════════════</p><b/>
 <b><i>HORA DA INSTALACAO<i>
-<br><b><font color="blue">Hora: </b></font><i> <b><font color="red">""" + _HORA_ +"""</font></b></i>
+<br><b><font color="blue">ชั่วโมง: </b></font><i> <b><font color="red">""" + _HORA_ +"""</font></b></i>
 <br><b><font color="blue">Minutos: </b></font> <i><b><font color="red">""" + _MINUTO_ + """</font></b></i>
 <br><b><font color="blue">Segundos: </b></font> <i><b><font color="red">""" + _SEGUNDO_ + """</font></b></i>
 <b><p>══════════════════════════</p><b><b><i><font color="#00FF00">By: crazy</i></b></br></p>
